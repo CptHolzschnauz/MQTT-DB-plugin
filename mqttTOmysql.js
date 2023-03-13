@@ -31,6 +31,15 @@ function mqtt_subscribe(err, granted) {
 
 function mqtt_reconnect(err) {
     console.log("Reconnect MQTT");
+	
+	var options = {
+	clientId: 'MyMQTT',
+	port: 1883,
+	//username: 'mqtt_user',
+	//password: 'mqtt_password',	
+	keepalive : 60
+};
+	
     if (err) {console.log(err);}
 	client  = mqtt.connect(Broker_URL, options);
 };
